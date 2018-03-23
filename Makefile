@@ -1,4 +1,6 @@
-.PHONY: clean
+.PHONY: clean install
+
+NAME=HandCrank_0.1.0
 
 FILES:= \
 	control.lua \
@@ -7,7 +9,16 @@ FILES:= \
 	item.lua \
 	locale
 
-HandCrank_0.1.0.zip:
+dist/$(NAME).zip:
+	@rm -rf dist
+	@mkdir -p dist/$(NAME)
+	cp -R $(FILES) dist/$(NAME)
 	luacheck --codes --ignore 631 --globals script data game defines table.deepcopy -- $$(find . -type f -name '*.lua')
 	@rm -rf $@
-	zip -9 $@ $(FILES)
+	(cd dist && zip -9 -r ../$@ $(NAME))
+
+clean:
+	rm -rf dist
+
+install:
+	cp $(ZIPFILE) "$(HOME)/Library/Application Support/factorio/mods/"
