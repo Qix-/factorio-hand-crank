@@ -1,0 +1,11 @@
+{
+    "name": "HandCrank",
+    "version": "0.1.0",
+    "title": "Hand Crank",
+    "author": "Josh Junon",
+    "contact": "josh@junon.me",
+    "homepage": "",
+    "factorio_version": "0.16",
+    "dependencies": ["base >= 0.16"],
+    "description": "A hand crank that can be used to jump-start circular power circuits."
+}
