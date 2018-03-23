@@ -1,5 +1,3 @@
-require('util')
-
 data:extend{{
 	type = 'solar-panel',
 	name = 'hand-crank',
@@ -9,8 +7,8 @@ data:extend{{
 	minable = {hardness = 0.1, mining_time = 0.2, result = 'hand-crank'},
 	max_health = 40,
 	corpse = 'small-remnants',
-	collision_box = {{-0.92, -0.38}, {0.069, 0.57}},
-	selection_box = {{-0.92, -0.38}, {0.069, 0.57}},
+	collision_box = {{-0.78, -0.62}, {0.77, 0.48}},
+	selection_box = {{-0.78, -0.62}, {0.77, 0.48}},
 	energy_source =
 	{
 		type = 'electric',
@@ -23,9 +21,12 @@ data:extend{{
 			{
 				filename = '__HandCrank__/graphics/entity/hand-crank.png',
 				priority = 'high',
-				width = 64,
+				width = 96,
 				height = 48,
-				shift = util.by_pixel(0, 3),
+				shift = {0.6, 0},
+				line_length = 1,
+				frame_count = 8,
+				animation_speed = 0.25
 --				hr_version = {
 --					filename = '__base__/graphics/entity/solar-panel/hr-solar-panel.png',
 --					priority = 'high',
@@ -36,11 +37,11 @@ data:extend{{
 --				}
 			},
 			{
-				filename = '__HandCrank__/graphics/entity/hand-crank_shadow.png',
+				filename = '__HandCrank__/graphics/entity/hand-crank_dark.png',
 				priority = 'high',
-				width = 64,
+				width = 96,
 				height = 48,
-				shift = util.by_pixel(0, 3),
+				shift = {0.6, 0},
 				draw_as_shadow = true,
 --				hr_version = {
 --					filename = '__base__/graphics/entity/solar-panel/hr-solar-panel-shadow.png',
@@ -59,11 +60,11 @@ data:extend{{
 		layers =
 		{
 			{
-				filename = '__HandCrank__/graphics/entity/hand-crank_dark.png',
+				filename = '__HandCrank__/graphics/entity/hand-crank_shadow.png',
 				priority = 'high',
-				width = 64,
+				width = 96,
 				height = 48,
-				shift = util.by_pixel(0, 3),
+				shift = {0.6, 0},
 --				hr_version = {
 --					filename = '__base__/graphics/entity/solar-panel/hr-solar-panel-shadow-overlay.png',
 --					priority = 'high',
