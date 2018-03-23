@@ -1,1 +1,2 @@
-require('prototypes.item')
+require('prototypes.item.hand-crank')
+require('prototypes.entity.hand-crank')
