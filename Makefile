@@ -7,7 +7,7 @@ FILES:= \
 	control.lua \
 	data.lua \
 	info.json \
-	item.lua \
+	prototypes \
 	locale
 
 $(ZIPFILE):
