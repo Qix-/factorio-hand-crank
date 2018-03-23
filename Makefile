@@ -21,4 +21,4 @@ clean:
 	rm -rf dist
 
 install:
-	cp $(ZIPFILE) "$(HOME)/Library/Application Support/factorio/mods/"
+	cp dist/$(NAME).zip "$(HOME)/Library/Application Support/factorio/mods/"
