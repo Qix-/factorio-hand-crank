@@ -1,6 +1,7 @@
 .PHONY: clean install
 
 NAME=HandCrank_0.1.0
+ZIPFILE=dist/$(NAME).zip
 
 FILES:= \
 	control.lua \
@@ -9,7 +10,7 @@ FILES:= \
 	item.lua \
 	locale
 
-dist/$(NAME).zip:
+$(ZIPFILE):
 	@rm -rf dist
 	@mkdir -p dist/$(NAME)
 	cp -R $(FILES) dist/$(NAME)
@@ -20,5 +21,5 @@ dist/$(NAME).zip:
 clean:
 	rm -rf dist
 
-install:
-	cp dist/$(NAME).zip "$(HOME)/Library/Application Support/factorio/mods/"
+install: $(ZIPFILE)
+	cp $(ZIPFILE) "$(HOME)/Library/Application Support/factorio/mods/"
