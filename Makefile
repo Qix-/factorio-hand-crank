@@ -21,7 +21,8 @@ SRC:= \
 	info.json \
 	locale/en/config.cfg \
 	prototypes/entity/hand-crank.lua \
-	prototypes/item/hand-crank.lua
+	prototypes/item/hand-crank.lua \
+	prototypes/recipe/hand-crank.lua
 
 DEST_FILES=$(addprefix dist/$(NAME)/,$(SRC))
 ICON_FILES=dist/$(NAME)/graphics/icon/hand-crank.png
