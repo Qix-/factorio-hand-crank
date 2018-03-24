@@ -1,13 +1,23 @@
--- function ontick(e)
--- 	if e.tick % 60 == 0 then --common trick to reduce how often this runs, we don't want it running every tick, just 1/second
--- 		for _, player in pairs(game.connected_players) do  --loop through all online players on the server
--- 			--if they're wearing our armor
--- 			if player.character and player.get_inventory(defines.inventory.player_armor).get_item_count("fire-armor") >= 1 then
--- 				--create the fire where they're standing
--- 				player.surface.create_entity{name="fire-flame", position=player.position, force="neutral"}
--- 			end
--- 		end
--- 	end
--- end
---
--- script.on_event({defines.events.on_tick}, e)
+local energy_10kw = 166.666666666666
+local current_cranks = {}
+
+script.on_event(defines.events.on_tick, function()
+	for _, crank in ipairs(current_cranks) do
+		if crank.valid then
+			crank.power_production = 0
+		end
+	end
+	current_cranks = {}
+
+	for _, player in pairs(game.players) do
+		if player.walking_state.walking and player.walking_state.direction == defines.direction.north then
+			local position = player.position
+			position.y = position.y - 1.0
+			local crank = player.surface.find_entity('hand-crank', position)
+			if crank then
+				crank.power_production = energy_10kw
+				table.insert(current_cranks, crank)
+			end
+		end
+	end
+end)
