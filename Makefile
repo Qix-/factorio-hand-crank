@@ -67,19 +67,19 @@ dist/gfx/entity/%/dark_0001.png: gfx/entity/%.blend
 dist/$(NAME)/graphics/entity/%.png: dist/gfx/entity/%/entity_0001.png
 	$(info >>> sprite sheet: $@)
 	@mkdir -p $(dir $@)
-	@convert $$(find $(dir $^) -name '*.png' -type f -name 'entity_*.png') -append $@
+	@convert $$(find $(dir $^) -name '*.png' -type f -name 'entity_*.png') -scale '25%' -append $@
 
 .PRECIOUS: dist/$(NAME)/graphics/entity/%_shadow.png
 dist/$(NAME)/graphics/entity/%_shadow.png: dist/gfx/entity/%/shadow_0001.png
 	$(info >>> sprite sheet: $@)
 	@mkdir -p $(dir $@)
-	@convert $$(find $(dir $^) -name '*.png' -type f -name 'shadow_*.png') -append $@
+	@convert $$(find $(dir $^) -name '*.png' -type f -name 'shadow_*.png') -scale '25%' -append $@
 
 .PRECIOUS: dist/$(NAME)/graphics/entity/%_dark.png
 dist/$(NAME)/graphics/entity/%_dark.png: dist/gfx/entity/%/dark_0001.png
 	$(info >>> sprite sheet: $@)
 	@mkdir -p $(dir $@)
-	@convert $$(find $(dir $^) -name '*.png' -type f -name 'dark_*.png') -append $@
+	@convert $$(find $(dir $^) -name '*.png' -type f -name 'dark_*.png') -scale '25%' -append $@
 
 clean:
 	$(info >>> clean (keep renders))
