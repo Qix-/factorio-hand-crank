@@ -1,6 +1,8 @@
 .PHONY: clean clean-all install
 SHELL:=$(shell which bash)
 
+PERCENT=%
+
 # some binaries
 BLENDER:=/Applications/blender.app/Contents/MacOS/blender
 
@@ -22,10 +24,11 @@ SRC:= \
 	prototypes/item/hand-crank.lua
 
 DEST_FILES=$(addprefix dist/$(NAME)/,$(SRC))
+ICON_FILES=dist/$(NAME)/graphics/icon/hand-crank.png
 
 all: $(ZIPFILE)
 
-$(ZIPFILE): $(GRAPHIC_FILES) $(DEST_FILES)
+$(ZIPFILE): $(GRAPHIC_FILES) $(DEST_FILES) $(ICON_FILES)
 	$(info >>> zip: $@)
 	@rm -rf $@
 	@(cd dist && zip -9 -r ../$@ $(NAME))
@@ -80,6 +83,13 @@ dist/$(NAME)/graphics/entity/%_dark.png: dist/gfx/entity/%/dark_0001.png
 	$(info >>> sprite sheet: $@)
 	@mkdir -p $(dir $@)
 	@convert $$(find $(dir $^) -name '*.png' -type f -name 'dark_*.png') -scale '25%' -append $@
+
+dist/gfx/entity/hand-crank/entity_0010.png: dist/gfx/entity/hand-crank/entity_0001.png
+.PRECIOUS: dist/$(NAME)/graphics/icon/hand-crank.png
+dist/$(NAME)/graphics/icon/hand-crank.png: dist/gfx/entity/hand-crank/entity_0010.png
+	$(info >>> icon: $@)
+	@mkdir -p $(dir $@)
+	@convert $^ -background none -gravity west -extent 250x250 -crop 207x190+17+0 +repage -scale 64x64\! +repage -modulate '150$(PERCENT)' -sigmoidal-contrast '5x35$(PERCENT)' $@
 
 clean:
 	$(info >>> clean (keep renders))

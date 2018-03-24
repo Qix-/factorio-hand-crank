@@ -2,8 +2,8 @@ data:extend{
 	{
 		type = 'item',
 		name = 'hand-crank',
-		icon = '__base__/graphics/icons/substation.png', -- TODO
-		icon_size = 32,
+		icon = '__HandCrank__/graphics/icon/hand-crank.png',
+		icon_size = 64,
 		flags = {'goes-to-quickbar'},
 		subgroup = 'energy',
 		place_result='hand-crank',

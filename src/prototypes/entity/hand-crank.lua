@@ -1,8 +1,8 @@
 data:extend{{
 	type = 'electric-energy-interface',
 	name = 'hand-crank',
-	icon = '__base__/graphics/icons/accumulator.png',
-	icon_size = 32,
+	icon = '__HandCrank__/graphics/icon/hand-crank.png',
+	icon_size = 64,
 	flags = {'placeable-neutral', 'player-creation'},
 	minable = {hardness = 0.1, mining_time = 0.2, result = 'hand-crank'},
 	max_health = 40,
