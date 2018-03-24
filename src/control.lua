@@ -1,5 +1,5 @@
 local energy_10kw = 166.666666666666
-local energy_cooldown = 0.95
+local energy_cooldown = 0.98
 local current_cranks = {}
 
 script.on_event(defines.events.on_tick, function()
