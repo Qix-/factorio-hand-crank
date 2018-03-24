@@ -71,7 +71,7 @@ dist/gfx/entity/%/dark_0001.png: gfx/entity/%.blend
 dist/$(NAME)/graphics/entity/%.png: dist/gfx/entity/%/entity_0001.png
 	$(info >>> sprite sheet: $@)
 	@mkdir -p $(dir $@)
-	@convert $$(find $(dir $^) -name '*.png' -type f -name 'entity_*.png') -scale '25%' -append $@
+	@convert $$(find $(dir $^) -name '*.png' -type f -name 'entity_*.png') -scale '25%' -sigmoidal-contrast '5x33$(PERCENT)' -append $@
 
 .PRECIOUS: dist/$(NAME)/graphics/entity/%_shadow.png
 dist/$(NAME)/graphics/entity/%_shadow.png: dist/gfx/entity/%/shadow_0001.png
