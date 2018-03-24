@@ -9,7 +9,7 @@ data:extend{{
 	corpse = 'small-remnants',
 	collision_box = {{-0.78, -0.62}, {0.77, 0.48}},
 	selection_box = {{-0.78, -0.62}, {0.77, 0.48}},
-	enable_gui = true,
+	enable_gui = false,
 	allow_copy_paste = false,
 	energy_source =
 	{
