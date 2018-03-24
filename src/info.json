@@ -4,8 +4,8 @@
     "title": "Hand Crank",
     "author": "Josh Junon",
     "contact": "josh@junon.me",
-    "homepage": "",
+    "homepage": "https://github.com/Qix-/factorio-hand-crank",
     "factorio_version": "0.16",
-    "dependencies": ["base >= 0.16"],
+    "dependencies": ["base >= 0.16.34"],
     "description": "A hand crank that can be used to jump-start circular power circuits."
 }
