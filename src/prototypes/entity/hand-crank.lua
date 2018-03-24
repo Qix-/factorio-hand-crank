@@ -33,9 +33,9 @@ data:extend{{
 				width = 96,
 				height = 48,
 				shift = {0.6, 0},
-				line_length = 0,
-				frame_count = 8,
-				animation_speed = 0.2,
+				line_length = 1,
+				frame_count = 24,
+				animation_speed = 0.004,
 				run_mode = 'forward'
 			},
 			{
@@ -44,9 +44,9 @@ data:extend{{
 				width = 96,
 				height = 48,
 				shift = {0.6, 0},
-				frame_count = 8,
-				line_length = 0,
-				animation_speed = 0.2,
+				frame_count = 24,
+				line_length = 1,
+				animation_speed = 0.004,
 				draw_as_shadow = true,
 				run_mode = 'forward'
 			},
@@ -56,9 +56,9 @@ data:extend{{
 				width = 96,
 				height = 48,
 				shift = {0.6, 0},
-				line_length = 0,
-				frame_count = 8,
-				animation_speed = 0.2,
+				line_length = 1,
+				frame_count = 24,
+				animation_speed = 0.004,
 				run_mode = 'forward'
 			}
 		}
